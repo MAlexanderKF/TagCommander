@@ -1,0 +1,172 @@
+<script language="javascript">
+<!--
+(function (window){
+  document.addEventListener("click", function (event){
+    if (!event){
+      event = window.event; // For older versions of Internet Explorer
+    }
+    var target = event.target || event.srcElement;
+    if (window.gtag){
+      if (target.classList.contains("guide")){
+        var parentDiv = target.parentElement;
+        var titleDiv = parentDiv.querySelector(".title");
+        var userSelection = titleDiv.textContent;
+        var obj = {
+          send_to: tC.internalvars.GA4_by_domain,
+          'hub_contact_id': tc_vars.hub_contact_id,
+          'hub_activity_id': tc_array_events["activity_id"],
+          'hub_offer_id': tc_array_events["offer_id"],
+          'hub_property_reference': tc_array_events["property_reference"],
+          'hub_requirement_id': tc_array_events["requirement_id"],
+          'user_selection': userSelection,
+          'page_location': tc_vars.GA4_pagelocation,
+          'content_group': tc_vars.content_group
+        };
+        gtag("event", "resi_portal_guide_card_click", obj);
+      }
+      var parentPlay = findParentByClass(target, "play");
+      if (parentPlay){
+        var titleElement = parentPlay.querySelector(".title");
+        if (titleElement){
+          var title = titleElement.textContent || titleElement.innerText;
+          var obj = {
+            send_to: tC.internalvars.GA4_by_domain,
+            'hub_contact_id': tc_vars.hub_contact_id,
+            'hub_activity_id': tc_array_events["activity_id"],
+            'hub_offer_id': tc_array_events["offer_id"],
+            'hub_property_reference': tc_array_events["property_reference"],
+            'hub_requirement_id': tc_array_events["requirement_id"],
+            'page_location': tc_vars.GA4_pagelocation,
+            'content_group': tc_vars.content_group,
+            'user_selection': title
+          };
+          gtag("event", "resi_portal_video_click", obj);
+        }
+      }
+    }
+    if (target.classList.contains("external-link-white")){
+      var obj = {
+        send_to: tC.internalvars.GA4_by_domain,
+        'hub_contact_id': tc_vars.hub_contact_id,
+        'hub_activity_id': tc_array_events["activity_id"],
+        'hub_offer_id': tc_array_events["offer_id"],
+        'hub_property_reference': tc_array_events["property_reference"],
+        'hub_requirement_id': tc_array_events["requirement_id"],
+        'page_location': tc_vars.GA4_pagelocation,
+        'content_group': tc_vars.content_group
+      };
+      gtag("event", "resi_portal_open_glossary", obj);
+    }
+    if (target.matches('a[href^="tel:"]') || (target.tagName === "IMG" && target.getAttribute("src") === "/assets/images/svg/phone.svg")){
+      var obj = {
+        send_to: tC.internalvars.GA4_by_domain,
+        'hub_contact_id': tc_vars.hub_contact_id,
+        'hub_activity_id': tc_array_events["activity_id"],
+        'hub_offer_id': tc_array_events["offer_id"],
+        'hub_property_reference': tc_array_events["property_reference"],
+        'hub_requirement_id': tc_array_events["requirement_id"],
+        'page_location': tc_vars.GA4_pagelocation,
+        'content_group': tc_vars.content_group
+      };
+      gtag("event", "resi_portal_agent_telephone_click", obj);
+    }
+    if (target.tagName === "A" && target.href.startsWith("mailto:") || (target.tagName === "IMG" && target.getAttribute("src") === "/assets/images/svg/email.svg")){
+      var obj = {
+        send_to: tC.internalvars.GA4_by_domain,
+        'hub_contact_id': tc_vars.hub_contact_id,
+        'hub_activity_id': tc_array_events["activity_id"],
+        'hub_offer_id': tc_array_events["offer_id"],
+        'hub_property_reference': tc_array_events["property_reference"],
+        'hub_requirement_id': tc_array_events["requirement_id"],
+        'page_location': tc_vars.GA4_pagelocation,
+        'content_group': tc_vars.content_group
+      };
+      gtag("event", "resi_portal_agent_email_click", obj);
+    }
+    if (
+      target.classList.contains("button-link") &&
+      target.classList.contains("link")) {
+      var closestH3 = target.closest(".banner-content").querySelector("h3");
+      // Check if the h3 element exists
+      if (closestH3){
+        var h3Text = closestH3.textContent;
+        var obj = {
+          send_to: tC.internalvars.GA4_by_domain,
+          'hub_contact_id': tc_vars.hub_contact_id,
+          'hub_activity_id': tc_array_events["activity_id"],
+          'hub_offer_id': tc_array_events["offer_id"],
+          'hub_property_reference': tc_array_events["property_reference"],
+          'hub_requirement_id': tc_array_events["requirement_id"],
+          'user_selection': h3Text,
+          'page_location': tc_vars.GA4_pagelocation,
+          'content_group': tc_vars.content_group
+        };
+        gtag("event", "resi_portal_find_out_more_click", obj);
+      }
+    }
+    if (
+      target.classList.contains("button-link") &&
+      target.classList.contains("email") 
+    ){
+  var closestH3 = target.closest(".banner-content").querySelector("h3");
+      // Check if the h3 element exists
+      if (closestH3){
+        var h3Text = closestH3.textContent;
+        var obj = {
+          send_to: tC.internalvars.GA4_by_domain,
+          'hub_contact_id': tc_vars.hub_contact_id,
+          'hub_activity_id': tc_array_events["activity_id"],
+          'hub_offer_id': tc_array_events["offer_id"],
+          'hub_property_reference': tc_array_events["property_reference"],
+          'hub_requirement_id': tc_array_events["requirement_id"],
+          'user_selection': h3Text,
+          'page_location': tc_vars.GA4_pagelocation,
+          'content_group': tc_vars.content_group
+        };
+        gtag("event", "resi_portal_find_out_more_contact_us", obj);
+      }
+    }
+    if (target.classList.contains("button") && target.textContent.includes("View Info")) {
+      var obj = {
+        send_to: tC.internalvars.GA4_by_domain,
+        hub_contact_id: tc_vars.hub_contact_id,
+        hub_activity_id: tc_array_events.activity_id,
+        hub_offer_id: tc_array_events.offer_id,
+        hub_property_reference: tc_array_events.property_reference,
+        hub_requirement_id: tc_array_events.requirement_id,
+        page_location: tc_vars.GA4_pagelocation,
+        content_group: tc_vars.content_group
+      };
+      gtag("event", "resi_portal_cdd_view_info", obj);
+    }
+    if (
+      target.classList.contains("ng-star-inserted") &&
+      target.textContent.includes("Documents")
+    ){
+      var obj = {
+        send_to: tC.internalvars.GA4_by_domain,
+        'hub_contact_id': tc_vars.hub_contact_id,
+        'hub_activity_id': tc_array_events["activity_id"],
+        'hub_offer_id': tc_array_events["offer_id"],
+        'hub_property_reference': tc_array_events["property_reference"],
+        'hub_requirement_id': tc_array_events["requirement_id"],
+        'page_location': tc_vars.GA4_pagelocation,
+        'content_group': tc_vars.content_group
+      };
+      gtag("event", "resi_portal_view_documents", obj);
+    }
+  });
+  // Helper function to find the parent element with the specified class
+var findParentByClass = function(element, className){
+    var parent = element.parentNode;
+    while (parent){
+      if (parent.classList && parent.classList.contains(className)){
+        return parent;
+      }
+      parent = parent.parentNode;
+    }
+    return null;
+  };
+})(window);
+-->
+</script>
