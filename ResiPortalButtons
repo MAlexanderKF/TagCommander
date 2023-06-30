@@ -19,7 +19,7 @@
           'hub_property_reference': tc_array_events["property_reference"],
           'hub_requirement_id': tc_array_events["requirement_id"],
           'user_selection': userSelection,
-          'page_location': tc_vars.GA4_pagelocation,
+          'page_location': window.document.URL,
           'content_group': tc_vars.content_group
         };
         gtag("event", "resi_portal_guide_card_click", obj);
@@ -36,7 +36,7 @@
             'hub_offer_id': tc_array_events["offer_id"],
             'hub_property_reference': tc_array_events["property_reference"],
             'hub_requirement_id': tc_array_events["requirement_id"],
-            'page_location': tc_vars.GA4_pagelocation,
+            'page_location': window.document.URL,
             'content_group': tc_vars.content_group,
             'user_selection': title
           };
@@ -52,7 +52,7 @@
         'hub_offer_id': tc_array_events["offer_id"],
         'hub_property_reference': tc_array_events["property_reference"],
         'hub_requirement_id': tc_array_events["requirement_id"],
-        'page_location': tc_vars.GA4_pagelocation,
+        'page_location': window.document.URL,
         'content_group': tc_vars.content_group
       };
       gtag("event", "resi_portal_open_glossary", obj);
@@ -65,7 +65,7 @@
         'hub_offer_id': tc_array_events["offer_id"],
         'hub_property_reference': tc_array_events["property_reference"],
         'hub_requirement_id': tc_array_events["requirement_id"],
-        'page_location': tc_vars.GA4_pagelocation,
+        'page_location': window.document.URL,
         'content_group': tc_vars.content_group
       };
       gtag("event", "resi_portal_agent_telephone_click", obj);
@@ -78,7 +78,7 @@
         'hub_offer_id': tc_array_events["offer_id"],
         'hub_property_reference': tc_array_events["property_reference"],
         'hub_requirement_id': tc_array_events["requirement_id"],
-        'page_location': tc_vars.GA4_pagelocation,
+        'page_location': window.document.URL,
         'content_group': tc_vars.content_group
       };
       gtag("event", "resi_portal_agent_email_click", obj);
@@ -98,7 +98,7 @@
           'hub_property_reference': tc_array_events["property_reference"],
           'hub_requirement_id': tc_array_events["requirement_id"],
           'user_selection': h3Text,
-          'page_location': tc_vars.GA4_pagelocation,
+          'page_location': window.document.URL,
           'content_group': tc_vars.content_group
         };
         gtag("event", "resi_portal_find_out_more_click", obj);
@@ -120,7 +120,7 @@
           'hub_property_reference': tc_array_events["property_reference"],
           'hub_requirement_id': tc_array_events["requirement_id"],
           'user_selection': h3Text,
-          'page_location': tc_vars.GA4_pagelocation,
+          'page_location': window.document.URL,
           'content_group': tc_vars.content_group
         };
         gtag("event", "resi_portal_find_out_more_contact_us", obj);
@@ -134,7 +134,7 @@
         hub_offer_id: tc_array_events.offer_id,
         hub_property_reference: tc_array_events.property_reference,
         hub_requirement_id: tc_array_events.requirement_id,
-        page_location: tc_vars.GA4_pagelocation,
+        page_location: window.document.URL,
         content_group: tc_vars.content_group
       };
       gtag("event", "resi_portal_cdd_view_info", obj);
@@ -150,7 +150,7 @@
         'hub_offer_id': tc_array_events["offer_id"],
         'hub_property_reference': tc_array_events["property_reference"],
         'hub_requirement_id': tc_array_events["requirement_id"],
-        'page_location': tc_vars.GA4_pagelocation,
+        'page_location': window.document.URL,
         'content_group': tc_vars.content_group
       };
       gtag("event", "resi_portal_view_documents", obj);
