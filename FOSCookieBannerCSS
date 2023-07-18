@@ -1,0 +1,60 @@
+#tc-privacy-wrapper {
+all: revert;
+}
+
+#tc-privacy-wrapper #iab_purposes_automatic_text {
+display: none;
+}
+
+#tc-privacy-wrapper #popin_tc_privacy_container_text { 
+ padding-left: 20px;
+    padding-right: 20px;
+  padding-top: 15px;
+   font-size: 0.9em !important; 
+  
+  margin: auto;
+}
+
+#tc-privacy-wrapper .cookie-banner-header {
+ font-weight: bold !important;
+ }
+
+#tc-privacy-wrapper .tc-privacy-block-button {
+padding:unset;
+}
+
+#tc-privacy-wrapper .tc-privacy-block-button {
+
+  padding-bottom: 20px;
+}
+
+#tc-privacy-wrapper #popin_tc_privacy_container_button
+{
+ width: 96%; 
+}
+
+#tc-privacy-wrapper #popin_tc_privacy_button
+{
+  font-size: 0.75em !important;
+  width: 140px;
+  height: 35px;
+  padding: 10px 10px;
+  border-radius: 0px;
+  border: 1px solid;
+}
+
+#tc-privacy-wrapper #popin_tc_privacy_button_2
+{
+  font-size: 0.75em !important;
+  width: 140px;
+  height: 35px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 0px;
+  border: 1px solid #D0103A;
+}
+
+
+#tc-privacy-wrapper #popin_tc_privacy_btn_close
+{
+visibility: hidden;
+}
